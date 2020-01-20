@@ -1,0 +1,16 @@
+{% extends 'dex/base.html' %}
+
+{% block content %}
+    <div class="pokemon">
+        {% if pokemon.published_date %}
+            <div class="date">
+                {{ pokemon.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'pokemon_edit' pk=pokemon.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h2>{{ pokemon.title }}</h2>
+        <p>{{ pokemon.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

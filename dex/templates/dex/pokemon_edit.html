@@ -2,7 +2,7 @@
 
 {% block content %}
     <h2>New Pokemon</h2>
-    <form method="POST" class="detail-form">{% csrf_token %}
+    <form method="POST" class="pokemon-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>

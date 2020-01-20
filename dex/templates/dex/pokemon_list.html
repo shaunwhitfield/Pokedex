@@ -1,0 +1,11 @@
+{% extends 'dex/base.html' %}
+
+{% block content %}
+    {% for pokemon in pokemons %}
+        <div class="pokemon">
+            <div class="date">
+                <p>published: {{ pokemon.published_date }}</p>
+            </div>
+            <h2><a href="{% url 'pokemon_detail' pk=pokemon.pk %}">{{ pokemon.title }}</a></h2>
+    {% endfor %}
+{% endblock %}

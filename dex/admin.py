@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Detail
+from .models import Pokemon
 
-admin.site.register(Detail)
+admin.site.register(Pokemon)
