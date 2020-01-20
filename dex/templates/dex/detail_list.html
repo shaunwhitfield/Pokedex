@@ -1,18 +1,11 @@
-<html>
-    <head>
-        <title>Pokedex</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Pokedex</a></h1>
-        </div>
-        
-        {% for detail in details %}
-            <div>
+{% extends 'dex/base.html' %}
+
+{% block content %}
+    {% for detail in details %}
+        <div class="detail">
+            <div class="date">
                 <p>published: {{ detail.published_date }}</p>
-                <h2><a href="">{{ detail.title }}</a></h2>
-                <p>{{ detail.text|linebreaksbr }}</p>
             </div>
-        {% endfor %}
-    </body>
-</html>
+            <h2><a href="{% url 'detail_detail' pk=detail.pk %}">{{ detail.title }}</a></h2>
+    {% endfor %}
+{% endblock %}

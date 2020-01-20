@@ -1,0 +1,13 @@
+{% extends 'dex/base.html' %}
+
+{% block content %}
+    <div class="detail">
+        {% if detail.published_date %}
+            <div class="date">
+                {{ detail.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ detail.title }}</h2>
+        <p>{{ detail.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
